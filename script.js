@@ -38,33 +38,28 @@ addBookButton.addEventListener("click", (e) =>
 
 })
 
-function Book(title, author, numberOfPages, readStatus)
+class Book
 {
-    
-    if (!new.target) throw Error("Use new operator to call constructor.");
-
-    this.title = title;
-    this.author = author;
-    this.numberOfPages = numberOfPages;    
-    this.readStatus = readStatus;
-
-    this.id = crypto.randomUUID();
-}
-
-Book.prototype.changeReadStatus = function(id, newStatus)
-{
-    for (let i = 0; i < myLibrary.length; i++)
+    constructor(title, author, numberOfPages, readStatus)
     {
-        if (myLibrary[i].id === id)
+        this.title = title;
+        this.author = author;
+        this.numberOfPages = numberOfPages;
+        this.readStatus = readStatus;
+    }
+
+    changeReadStatus(id, newStatus)
+    {
+        for (let i = 0; i < myLibrary.length; i++)
         {
-            myLibrary[i].readStatus = newStatus;
+            if (myLibrary[i].id === id)
+            {
+                myLibrary[i].readStatus = newStatus;
+            }
         }
     }
 
 }
-
-
-
 
 function addBookToLibrary(title, author, numberOfPages, readStatus)
 {
