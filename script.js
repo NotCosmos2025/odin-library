@@ -38,6 +38,8 @@ addBookButton.addEventListener("click", (e) =>
 
 })
 
+//used classes instead of factory function
+
 class Book
 {
     constructor(title, author, numberOfPages, readStatus)
